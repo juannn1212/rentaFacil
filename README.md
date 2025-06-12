@@ -1,59 +1,141 @@
-# rentaFacil# RentaFacilClient
+# RentaFácil - Microservicios y Frontend Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
+Este repositorio contiene:
 
-## Development server
+* **VehicleService**: Microservicio para registrar y consultar vehículos.
+* **BookingService**: Microservicio para crear reservas y consultar historial.
+* **Worker**: Servicio en background que genera reportes diarios.
+* **Frontend Angular**: Interfaz de usuario para consumir los microservicios.
 
-To start a local development server, run:
+## Requisitos
 
-```bash
-ng serve
-```
+* Docker y Docker Compose
+* .NET 8 SDK
+* Node.js (≥22.12)
+* Angular CLI (`npm install -g @angular/cli`)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 1. Levantar los servicios con Docker
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+En la raíz del proyecto ejecuta:
 
 ```bash
-ng generate --help
+# Construir y levantar contenedores en segundo plano
+docker-compose up -d --build
+
+# Verificar estado
+docker-compose ps
+
+# Consultar logs si alguna pieza falla
+docker-compose logs -f sqlserver
+docker-compose logs -f vehiclesvc
+docker-compose logs -f bookingsvc
+docker-compose logs -f worker
 ```
 
-## Building
+> **Nota**: El contenedor de frontend **no** se genera en Docker.
 
-To build the project run:
+## 2. Generar y aplicar migraciones de base de datos
+
+Para versionar y recrear la estructura de tablas, genera migraciones y luego aplícalas:
+
+### VehicleService
 
 ```bash
-ng build
+dotnet ef migrations add InitialCreate \
+  --project VehicleService/VehicleService.Infrastructure/VehicleService.Infrastructure.csproj \
+  --startup-project VehicleService/VehicleService.API/VehicleService.API.csproj \
+  --context VehicleDbContext \
+  --output-dir Migrations
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### BookingService
 
 ```bash
-ng test
+dotnet ef migrations add InitialCreate \
+  --project BookingService/BookingService.Infrastructure/BookingService.Infrastructure.csproj \
+  --startup-project BookingService/BookingService.API/BookingService.API.csproj \
+  --context BookingDbContext \
+  --output-dir Migrations
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+Luego, para aplicar todas las migraciones pendientes:
 
 ```bash
-ng e2e
+# VehicleService
+dotnet ef database update \
+  --project VehicleService/VehicleService.Infrastructure/VehicleService.Infrastructure.csproj \
+  --startup-project VehicleService/VehicleService.API/VehicleService.API.csproj \
+  --context VehicleDbContext
+
+# BookingService
+dotnet ef database update \
+  --project BookingService/BookingService.Infrastructure/BookingService.Infrastructure.csproj \
+  --startup-project BookingService/BookingService.API/BookingService.API.csproj \
+  --context BookingDbContext
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+> Estas migraciones crean las tablas necesarias y la historia de EF.
 
-## Additional Resources
+## 3. Ejecutar las APIs .NET
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Con las migraciones aplicadas, arranca cada API manualmente:
+
+```bash
+# VehicleService (puerto 5010)
+cd VehicleService/VehicleService.API
+dotnet run
+# Escucha en http://localhost:5010
+
+# BookingService (puerto 5045)
+cd ../../BookingService/BookingService.API
+dotnet run
+# Escucha en http://localhost:5045
+```
+
+## 4. Ejecutar el Worker
+
+```bash
+cd ../../Worker
+dotnet run
+```
+
+El Worker se conecta a BookingService para generar reportes diarios.
+
+## 5. Ejecutar el Frontend Angular
+
+Desde la carpeta `renta-facil-client` (o `client`, según tu estructura):
+
+```bash
+cd renta-facil-client
+npm install           # instalar dependencias
+ng serve              # levantar en http://localhost:4200
+```
+
+Navega a `http://localhost:4200` y prueba las rutas:
+
+* `/search`  → Buscar vehículos por tipo y fecha
+* `/book`    → Crear reserva (elige vehículo de la lista)
+* `/history` → Ver historial por Client ID
+
+## 6. CORS y configuraciones finales
+
+Asegúrate de tener en cada API (`Program.cs`):
+
+```csharp
+// Habilitar CORS para Angular Dev
+builder.Services.AddCors(opt => {
+  opt.AddPolicy("AllowAngularDev", p => p
+    .WithOrigins("http://localhost:4200")
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+  );
+});
+
+app.UseCors("AllowAngularDev");
+```
+
+Con esto el frontend podrá comunicar sin problemas.
+
+---
+
+¡Listo! Con estos pasos tendrás tu ecosistema de microservicios y frontend funcionando correctamente.
