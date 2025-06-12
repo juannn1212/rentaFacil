@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "MiPassw0rd!2025"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlvolume:/var/opt/mssql
+
+  vehiclesvc:
+    build:
+      context: .
+      dockerfile: VehicleService/VehicleService.API/Dockerfile
+    depends_on:
+      - sqlserver
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=RentaFacil_DB;User Id=sa;Password=MiPassw0rd!2025;Encrypt=False;TrustServerCertificate=True;
+    ports:
+      - "5001:80"
+
+  bookingsvc:
+    build:
+      context: .
+      dockerfile: BookingService/BookingService.API/Dockerfile
+    depends_on:
+      - sqlserver
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=RentaFacil_DB;User Id=sa;Password=MiPassw0rd!2025;Encrypt=False;TrustServerCertificate=True;
+    ports:
+      - "5002:80"
+
+  worker:
+    build:
+      context: .
+      dockerfile: Worker/Dockerfile
+    depends_on:
+      - bookingsvc
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=RentaFacil_DB;User Id=sa;Password=MiPassw0rd!2025;Encrypt=False;TrustServerCertificate=True;
+
+volumes:
+  sqlvolume:

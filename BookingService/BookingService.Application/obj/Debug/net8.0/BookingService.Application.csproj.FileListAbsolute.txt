@@ -1,0 +1,16 @@
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\bin\Debug\net8.0\BookingService.Application.deps.json
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\bin\Debug\net8.0\BookingService.Application.dll
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\bin\Debug\net8.0\BookingService.Application.pdb
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\bin\Debug\net8.0\BookingService.Domain.dll
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\bin\Debug\net8.0\BookingService.Domain.pdb
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\obj\Debug\net8.0\BookingService.Application.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\obj\Debug\net8.0\BookingService.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\obj\Debug\net8.0\BookingService.Application.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\obj\Debug\net8.0\BookingService.Application.AssemblyInfo.cs
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\obj\Debug\net8.0\BookingService.Application.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\obj\Debug\net8.0\BookingService.Application.sourcelink.json
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\obj\Debug\net8.0\BookingS.9C323D69.Up2Date
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\obj\Debug\net8.0\BookingService.Application.dll
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\obj\Debug\net8.0\refint\BookingService.Application.dll
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\obj\Debug\net8.0\BookingService.Application.pdb
+C:\Users\LENOVO\Desktop\RentaFacil\BookingService\BookingService.Application\obj\Debug\net8.0\ref\BookingService.Application.dll

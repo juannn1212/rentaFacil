@@ -5,33 +5,33 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VehicleService", "VehicleService", "{0EF8D2D0-80B1-4DBE-B253-479D8D2B05C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleService.API", "VehicleService\VehicleService.API\VehicleService.API.csproj", "{FCA89A8F-0083-4CE0-9D4D-A39549925428}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleService.API", "VehicleService\VehicleService.API\VehicleService.API.csproj", "{FCA89A8F-0083-4CE0-9D4D-A39549925428}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleService.Application", "VehicleService\VehicleService.Application\VehicleService.Application.csproj", "{803E4F02-2C6D-4CEA-864F-F39382068289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleService.Application", "VehicleService\VehicleService.Application\VehicleService.Application.csproj", "{803E4F02-2C6D-4CEA-864F-F39382068289}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleService.Domain", "VehicleService\VehicleService.Domain\VehicleService.Domain.csproj", "{BFAC4AA4-A2CF-49C1-9089-900C0DA1C6C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleService.Domain", "VehicleService\VehicleService.Domain\VehicleService.Domain.csproj", "{BFAC4AA4-A2CF-49C1-9089-900C0DA1C6C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleService.Infrastructure", "VehicleService\VehicleService.Infrastructure\VehicleService.Infrastructure.csproj", "{13604FAE-F54D-44A9-AC91-0096C0865562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleService.Infrastructure", "VehicleService\VehicleService.Infrastructure\VehicleService.Infrastructure.csproj", "{13604FAE-F54D-44A9-AC91-0096C0865562}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BookingService", "BookingService", "{24870998-7517-4602-BCB3-2586FEC1DF9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingService.API", "BookingService\BookingService.API\BookingService.API.csproj", "{60796104-7E53-4D7D-82FB-75D8EFD7A005}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.API", "BookingService\BookingService.API\BookingService.API.csproj", "{60796104-7E53-4D7D-82FB-75D8EFD7A005}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingService.Application", "BookingService\BookingService.Application\BookingService.Application.csproj", "{A825EB5E-4DBF-4BE7-B3C8-EA637BF78CE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Application", "BookingService\BookingService.Application\BookingService.Application.csproj", "{A825EB5E-4DBF-4BE7-B3C8-EA637BF78CE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingService.Domain", "BookingService\BookingService.Domain\BookingService.Domain.csproj", "{CE58B4A2-7F17-4060-B647-16B2C73F613F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Domain", "BookingService\BookingService.Domain\BookingService.Domain.csproj", "{CE58B4A2-7F17-4060-B647-16B2C73F613F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingService.Infrastructure", "BookingService\BookingService.Infrastructure\BookingService.Infrastructure.csproj", "{923E72D0-4EEC-4E2A-8AB3-5312AEC12579}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Infrastructure", "BookingService\BookingService.Infrastructure\BookingService.Infrastructure.csproj", "{923E72D0-4EEC-4E2A-8AB3-5312AEC12579}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker", "Worker\Worker.csproj", "{9019CE1E-C211-415B-A325-AB95FB7D93AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker", "Worker\Worker.csproj", "{9019CE1E-C211-415B-A325-AB95FB7D93AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{3CA12A8F-2104-4AE3-AA40-B2705B3EBCBC}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Global
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7BCAF23D-7C7B-4BFD-96E1-34D66A85FE6F}
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -150,6 +150,9 @@ Global
 		{9019CE1E-C211-415B-A325-AB95FB7D93AF}.Release|x86.ActiveCfg = Release|Any CPU
 		{9019CE1E-C211-415B-A325-AB95FB7D93AF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FCA89A8F-0083-4CE0-9D4D-A39549925428} = {0EF8D2D0-80B1-4DBE-B253-479D8D2B05C5}
 		{803E4F02-2C6D-4CEA-864F-F39382068289} = {0EF8D2D0-80B1-4DBE-B253-479D8D2B05C5}
@@ -159,5 +162,8 @@ Global
 		{A825EB5E-4DBF-4BE7-B3C8-EA637BF78CE0} = {24870998-7517-4602-BCB3-2586FEC1DF9B}
 		{CE58B4A2-7F17-4060-B647-16B2C73F613F} = {24870998-7517-4602-BCB3-2586FEC1DF9B}
 		{923E72D0-4EEC-4E2A-8AB3-5312AEC12579} = {24870998-7517-4602-BCB3-2586FEC1DF9B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BCAF23D-7C7B-4BFD-96E1-34D66A85FE6F}
 	EndGlobalSection
 EndGlobal
