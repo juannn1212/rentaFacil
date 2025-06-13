@@ -103,10 +103,10 @@ El Worker se conecta a BookingService para generar reportes diarios.
 
 ## 5. Ejecutar el Frontend Angular
 
-Desde la carpeta `renta-facil-client` (o `client`, según tu estructura):
+Desde la carpeta `client` (o `client`, según tu estructura):
 
 ```bash
-cd renta-facil-client
+cd client
 npm install           # instalar dependencias
 ng serve              # levantar en http://localhost:4200
 ```
