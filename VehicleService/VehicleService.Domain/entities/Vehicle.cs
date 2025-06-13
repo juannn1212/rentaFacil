@@ -1,5 +1,4 @@
-﻿// VehicleService.Domain/Entities/Vehicle.cs
-namespace VehicleService.Domain.Entities
+﻿namespace VehicleService.Domain.Entities
 {
     public class Vehicle
     {

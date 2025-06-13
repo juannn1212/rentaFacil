@@ -1,5 +1,4 @@
-﻿// VehicleService.Application/Mappings/VehicleProfile.cs
-using AutoMapper;
+﻿using AutoMapper;
 using VehicleService.Domain.Entities;
 using VehicleService.Application.DTOs;
 

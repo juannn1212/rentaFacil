@@ -1,5 +1,4 @@
-﻿// BookingService.Domain/Entities/DailyReport.cs
-namespace BookingService.Domain.Entities
+﻿namespace BookingService.Domain.Entities
 {
     public class DailyReport
     {

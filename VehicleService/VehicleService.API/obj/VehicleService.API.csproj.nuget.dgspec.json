@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LENOVO\\Desktop\\RentaFacil\\VehicleService\\vehicleService.API\\VehicleService.API.csproj": {}
+    "C:\\Users\\LENOVO\\Desktop\\RentaFacil\\VehicleService\\VehicleService.API\\VehicleService.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LENOVO\\Desktop\\RentaFacil\\VehicleService\\vehicleService.API\\VehicleService.API.csproj": {
+    "C:\\Users\\LENOVO\\Desktop\\RentaFacil\\VehicleService\\VehicleService.API\\VehicleService.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\RentaFacil\\VehicleService\\vehicleService.API\\VehicleService.API.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\RentaFacil\\VehicleService\\VehicleService.API\\VehicleService.API.csproj",
         "projectName": "VehicleService.API",
-        "projectPath": "C:\\Users\\LENOVO\\Desktop\\RentaFacil\\VehicleService\\vehicleService.API\\VehicleService.API.csproj",
+        "projectPath": "C:\\Users\\LENOVO\\Desktop\\RentaFacil\\VehicleService\\VehicleService.API\\VehicleService.API.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\Desktop\\RentaFacil\\VehicleService\\vehicleService.API\\obj\\",
+        "outputPath": "C:\\Users\\LENOVO\\Desktop\\RentaFacil\\VehicleService\\VehicleService.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

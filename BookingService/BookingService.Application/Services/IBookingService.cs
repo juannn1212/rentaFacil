@@ -1,5 +1,4 @@
-﻿// BookingService.Application/Services/IBookingService.cs
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookingService.Domain.Entities;

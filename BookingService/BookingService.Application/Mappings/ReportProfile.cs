@@ -1,5 +1,4 @@
-﻿// BookingService.Application/Mappings/ReportProfile.cs
-using AutoMapper;
+﻿using AutoMapper;
 using BookingService.Domain.Entities;
 using BookingService.Application.DTOs;
 

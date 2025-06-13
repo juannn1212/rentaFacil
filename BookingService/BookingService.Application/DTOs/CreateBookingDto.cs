@@ -1,5 +1,4 @@
-﻿// BookingService.Application/DTOs/CreateBookingDto.cs
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 namespace BookingService.Application.DTOs
 {
     public class CreateBookingDto

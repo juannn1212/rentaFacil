@@ -1,11 +1,10 @@
-﻿// VehicleService.Infrastructure/Data/DbInitializer.cs
-
+﻿
 using System;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using VehicleService.Domain.Entities;
-using VehicleService.Infrastructure;    // Aquí está tu VehicleDbContext
+using VehicleService.Infrastructure;    
 
 namespace VehicleService.Infrastructure.Data
 {

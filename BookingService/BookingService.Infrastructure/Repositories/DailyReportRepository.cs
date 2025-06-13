@@ -1,5 +1,4 @@
-﻿// BookingService.Infrastructure/Repositories/DailyReportRepository.cs
-using BookingService.Domain.Entities;
+﻿using BookingService.Domain.Entities;
 using BookingService.Domain.Repositories;
 
 namespace BookingService.Infrastructure.Repositories

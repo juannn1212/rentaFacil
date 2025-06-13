@@ -17,7 +17,6 @@ namespace BookingService.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            // Aquí configuraciones adicionales si las necesitas
         }
     }
 }

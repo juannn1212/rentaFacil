@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wmxfomNQYfA=",
+  "dgSpecHash": "4jK1kbLsNdE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\Desktop\\RentaFacil\\VehicleService\\vehicleService.API\\VehicleService.API.csproj",
+  "projectFilePath": "C:\\Users\\LENOVO\\Desktop\\RentaFacil\\VehicleService\\VehicleService.API\\VehicleService.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

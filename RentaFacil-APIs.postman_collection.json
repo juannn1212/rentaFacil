@@ -1,0 +1,133 @@
+{
+  "info": {
+    "name": "RentaFácil APIs",
+    "description": "Colección para VehicleService y BookingService",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "VehicleService",
+      "item": [
+        {
+          "name": "GET Listar Vehículos",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5010/api/vehicles"
+          }
+        },
+        {
+          "name": "GET Vehículo por ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5010/api/vehicles/{{vehicleId}}"
+          }
+        },
+        {
+          "name": "POST Crear Vehículo",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"licensePlate\": \"ABC-123\",\n  \"type\": \"SUV\",\n  \"isAvailable\": true\n}"
+            },
+            "url": "http://localhost:5010/api/vehicles"
+          }
+        },
+        {
+          "name": "PUT Actualizar Vehículo",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"licensePlate\": \"XYZ-999\",\n  \"type\": \"Sedan\",\n  \"isAvailable\": false\n}"
+            },
+            "url": "http://localhost:5010/api/vehicles/{{vehicleId}}"
+          }
+        },
+        {
+          "name": "DELETE Eliminar Vehículo",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:5010/api/vehicles/{{vehicleId}}"
+          }
+        },
+        {
+          "name": "GET Disponibilidad Vehículos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5010/api/vehicles/availability?type=SUV&date=2025-06-14",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5010",
+              "path": ["api","vehicles","availability"],
+              "query": [
+                { "key": "type", "value": "SUV" },
+                { "key": "date", "value": "2025-06-14" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "BookingService",
+      "item": [
+        {
+          "name": "GET Listar Reservas",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5045/api/bookings"
+          }
+        },
+        {
+          "name": "GET Reserva por ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5045/api/bookings/{{bookingId}}"
+          }
+        },
+        {
+          "name": "POST Crear Reserva",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clientId\": \"11111111-2222-3333-4444-555555555555\",\n  \"vehicleId\": \"aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n  \"startDate\": \"2025-06-15T09:00:00\",\n  \"endDate\": \"2025-06-16T18:00:00\"\n}"
+            },
+            "url": "http://localhost:5045/api/bookings"
+          }
+        },
+        {
+          "name": "PUT Actualizar Reserva",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clientId\": \"11111111-2222-3333-4444-555555555555\",\n  \"vehicleId\": \"aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n  \"startDate\": \"2025-06-15T10:00:00\",\n  \"endDate\": \"2025-06-16T19:00:00\"\n}"
+            },
+            "url": "http://localhost:5045/api/bookings/{{bookingId}}"
+          }
+        },
+        {
+          "name": "DELETE Eliminar Reserva",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:5045/api/bookings/{{bookingId}}"
+          }
+        },
+        {
+          "name": "GET Historial por Cliente",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5045/api/bookings/history/{{clientId}}"
+          }
+        }
+      ]
+    }
+  ]
+}

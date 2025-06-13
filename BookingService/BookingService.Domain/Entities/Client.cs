@@ -1,5 +1,4 @@
-﻿// BookingService.Domain/Entities/Client.cs
-namespace BookingService.Domain.Entities
+﻿namespace BookingService.Domain.Entities
 {
     public class Client
     {

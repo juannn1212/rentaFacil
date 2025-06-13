@@ -1,5 +1,4 @@
-﻿// BookingService.Application/DTOs/ReportDto.cs
-namespace BookingService.Application.DTOs
+﻿namespace BookingService.Application.DTOs
 {
     public class ReportDto
     {

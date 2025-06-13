@@ -1,5 +1,4 @@
-﻿// BookingService.Infrastructure/Data/BookingDbInitializer.cs
-
+﻿
 using System;
 using System.Linq;
 using System.Data;
@@ -7,7 +6,7 @@ using System.Data.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using BookingService.Domain.Entities;
-using BookingService.Infrastructure;  // Para BookingDbContext
+using BookingService.Infrastructure;
 
 namespace BookingService.Infrastructure.Data
 {

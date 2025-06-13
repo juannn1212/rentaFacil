@@ -1,15 +1,14 @@
 ﻿// Program.cs
 using System;
 using BookingService.Application.Services;
-using BookingService.Domain.Repositories;            // IBookingRepository
-using BookingService.Infrastructure;                // BookingDbContext
-using BookingService.Infrastructure.Data;           // BookingDbInitializer (opcional)
-using BookingService.Infrastructure.Repositories;   // BookingRepository
+using BookingService.Domain.Repositories;            
+using BookingService.Infrastructure;                
+using BookingService.Infrastructure.Data;           
+using BookingService.Infrastructure.Repositories;   
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-// Alias para la implementación de IBookingService
 using BkSvc = BookingService.Application.Services.BookingService;
 
 var builder = Host.CreateApplicationBuilder(args);
@@ -37,6 +36,5 @@ builder.Services.AddHostedService<Worker.Worker>();
 
 var host = builder.Build();
 
-// (Opcional) Seed de Bookings: BookingDbInitializer.Initialize(host.Services);
 
 host.Run();
