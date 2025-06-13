@@ -1,0 +1,45 @@
+<div class="register-card">
+  <a routerLink="/" class="back-link">
+    <svg xmlns="http://www.w3.org/2000/svg" class="back-icon" viewBox="0 0 24 24" stroke="currentColor" fill="none">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M15 19l-7-7 7-7" />
+    </svg>
+    <span>Volver</span>
+  </a>
+
+  <h2>Registrar Vehículo</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label>Placa</label>
+      <input formControlName="licensePlate" type="text" />
+      <div *ngIf="form.controls['licensePlate'].invalid && form.controls['licensePlate'].touched"
+           class="message error">
+        Requerido
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label>Tipo</label>
+      <input formControlName="type" type="text" />
+      <div *ngIf="form.controls['type'].invalid && form.controls['type'].touched"
+           class="message error">
+        Requerido
+      </div>
+    </div>
+
+    <div class="mb-4 toggle-group">
+      <span>Disponible</span>
+      <label class="switch">
+        <input type="checkbox" formControlName="isAvailable" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <button type="submit" [disabled]="submitting" class="btn">
+      {{ submitting ? 'Registrando...' : 'Registrar' }}
+    </button>
+    <p *ngIf="success" class="message success">¡Vehículo registrado con éxito!</p>
+    <p *ngIf="errorMsg" class="message error">{{ errorMsg }}</p>
+  </form>
+</div>

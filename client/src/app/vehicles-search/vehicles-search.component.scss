@@ -1,0 +1,113 @@
+$accent: #0066ff;
+$bg-light: #f7faff;
+$text-dark: #1f2937;
+$card-bg: #ffffff;
+$border-radius: 12px;
+$shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+.search-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: $text-dark;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: $accent;
+  text-decoration: none;
+  margin-bottom: 20px;
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+  }
+  &:hover { text-decoration: underline; }
+}
+
+.form-card {
+  background: $card-bg;
+  padding: 30px;
+  border-radius: $border-radius;
+  box-shadow: $shadow-light;
+  margin-bottom: 30px;
+  h2 {
+    margin: 0 0 20px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .fields {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    .field {
+      flex: 1 1 200px;
+      display: flex;
+      flex-direction: column;
+      label {
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+      input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: $border-radius;
+        font-size: 1rem;
+        &:focus {
+          outline: none;
+          border-color: $accent;
+          box-shadow: 0 0 0 3px rgba($accent, 0.2);
+        }
+      }
+    }
+  }
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: $accent;
+    color: #fff;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    &:hover { background: darken($accent, 10%); }
+    &:disabled {
+      background: #aacfff;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    background: $card-bg;
+    padding: 15px 20px;
+    border-radius: $border-radius;
+    box-shadow: $shadow-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    .plate {
+      font-weight: 600;
+      margin-right: 8px;
+    }
+    .sep { margin: 0 8px; color: #999; }
+    .type { color: $accent; }
+  }
+}
+
+.no-results {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
